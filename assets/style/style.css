@@ -14,7 +14,7 @@ header{
 }
 
 header img{
-    width: 250px;
+    width: 300px;
 }
 .title h1{
     color: rgb(99, 49, 3);
@@ -22,6 +22,7 @@ header img{
 }
 
 .top{
+    font-size: 18px;
     display: flex;
     text-align: center;
     align-items: center;
@@ -32,12 +33,14 @@ header img{
 }
 
 form{
-    display: grid;
-    grid-template-columns: (3,1fr);
-    font-size: 30px;
+    width: 500px;
+    display:flex;
+    flex-direction:column;
+    text-align: left;
+    font-size: 20px;
     font-weight: 600;
-    margin: 20px;
-    padding: 20px;
+    margin: 40px;
+    padding: 40px;
     border-radius: 50px;
   background-color: blueviolet;
 
@@ -48,13 +51,27 @@ p1 {
 
 input{
     border-radius: 10px;
+    padding: 5px;
    
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
 }
 
 select{
     border-radius: 10px;
+    padding: 5px;
     
 }
+
 #submit{
     color: rgb(80, 75, 2);
     font-size: 15px;
@@ -63,8 +80,19 @@ select{
     background-color: rgb(247, 242, 181);
     border-color:rgb(80, 75, 2);
     border-radius: 10px;
+    margin-top: 10px;
+   
 }
 
 #submit:hover {
     color:grey;
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
 }

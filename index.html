@@ -32,27 +32,32 @@
             <form>
                 <div>
                     <label for="products">Producto</label>
-                    <input id="products" type="text" placeholder="nombre del producto">
+                    <div class="input-field">
+                        <input id="products" type="text" placeholder="nombre del producto">
+                    </div>
                 </div>
                 <div>
                     <label for="units">Unidades</label>
-                    <input id="units" type="number" placeholder="1" min="0" max="10">
+                    <div class="input-field">
+                        <input id="units" type="number" placeholder="1" min="0" max="10">
+                    </div>
                     <p1>*solo se pueden agregar hasta 10 unidades</p1>
                 </div>
                 <div class="category">
                     <p>Categoria</p>
-                    <select name="category" id="category">
-                        <option value="food">Comida</option>
-                        <option value="foodBowl">Recipientes para comida</option>
-                        <option value="water">Recipientes para agua</option>
-                        <option value="bath">Accesorios para su higiene</option>
-                        <option value="toys">Juguetes </option>
-                        <option value="bedTime">Cama</option>
-                        <option value="accesoriesOutside">Accesorios para paseo</option>
-                        <option value="pills">Pastillas</option>
-                    </select>
-
-                    <div>
+                    <div class="category">
+                        <select name="category" id="category">
+                            <option value="food">Comida</option>
+                            <option value="foodBowl">Recipientes para comida</option>
+                            <option value="water">Recipientes para agua</option>
+                            <option value="bath">Accesorios para su higiene</option>
+                            <option value="toys">Juguetes </option>
+                            <option value="bedTime">Cama</option>
+                            <option value="accesoriesOutside">Accesorios para paseo</option>
+                            <option value="pills">Pastillas</option>
+                        </select>
+                    </div>
+                    <div class="button">
                         <input id="submit" type="submit">
                     </div>
 
