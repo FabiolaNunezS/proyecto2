@@ -31,20 +31,26 @@
             </div>
             <form>
                 <div>
-                    <label for="products">Producto</label>
+                    <div class="input">
+                        <label for="products">Producto</label>
+                    </div>
                     <div class="input-field">
                         <input id="products" type="text" placeholder="nombre del producto">
                     </div>
                 </div>
                 <div>
-                    <label for="units">Unidades</label>
+                    <div class="input"> 
+                        <label for="units">Unidades</label>
+                    </div>
                     <div class="input-field">
                         <input id="units" type="number" placeholder="1" min="0" max="10">
                     </div>
                     <p1>*solo se pueden agregar hasta 10 unidades</p1>
                 </div>
-                <div class="category">
-                    <p>Categoria</p>
+                <div class="selection">
+                    <div class="input">
+                        <p>Categoria</p>
+                    </div>
                     <div class="category">
                         <select name="category" id="category">
                             <option value="food">Comida</option>
@@ -60,13 +66,8 @@
                     <div class="button">
                         <input id="submit" type="submit">
                     </div>
-
                 </div>
-
             </form>
-
-
-
 
         </section>
 

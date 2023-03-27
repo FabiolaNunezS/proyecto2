@@ -55,6 +55,13 @@ input{
    
 }
 
+.input{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
 .input-field{
     display: flex;
     flex-direction: column;
@@ -95,4 +102,10 @@ main{
     text-align: center;
     align-items: center;
 
+}
+.button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
