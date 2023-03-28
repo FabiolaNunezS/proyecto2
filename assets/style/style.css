@@ -11,8 +11,16 @@ header{
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
-   
 
+}
+
+header img{
+    width: 300px;
+}
+
+.title h1{
+    color: rgb(99, 49, 3);
+    font-size: 60px;
 }
 .slogan{
     font-size: 20px;
@@ -20,31 +28,19 @@ header{
     color: rgb(99, 49, 3);
 }
 
-header img{
-    width: 300px;
-}
-.title h1{
-    color: rgb(99, 49, 3);
-    font-size: 60px;
-}
-
 /* primer responsive header */
 
 @media (max-width: 1200px) {
     header {
-    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    width: fit-content;
 }    
 }
 
 @media (max-width: 900px){
    header {
-    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    width: fit-content;
         }
 }
 
@@ -52,27 +48,67 @@ header img{
     header {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    height: fit-content;
 }    
 }
 
+@media (max-width: 300px) {
+    header {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}    
+}
 .top{
     font-size: 18px;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    column-gap: 100px;
     margin-top: 30px;
     margin-bottom: 20px;
+    color: rgb(99, 49, 3);;
 }
 
-h2{
-    color: rgb(99, 49, 3);
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: blue;
+
 }
+
+
+/* h2 dentro de main responsive  */
+@media (max-width: 1200px) {
+    main h2{
+    display: grid;
+    grid-template-columns: repeat(1,1fr); 
+}
+}
+
+@media (max-width: 900px){
+   main h2{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+}
+
+@media (max-width: 600px) {
+    main h2 {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    }
+}    
+
+@media (max-width: 300px) {
+    main h2 {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    }
+}    
 
 form{
-    width: 500px;
+    width: auto;
     display:flex;
     flex-direction:column;
     text-align: left;
@@ -140,13 +176,7 @@ select{
 }
 
 
-main{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
 
-}
 .button{
     display: flex;
     justify-content: center;
@@ -155,30 +185,27 @@ main{
 }
 
 
-/* segundo responsive en main */
+/* tercer responsive en main */
 @media (max-width: 1200px) {
-    main {
-    overflow: hidden;
+    main{
     display: grid;
-    grid-template-columns: repeat(1,1fr);
-    width: fit-content;
-}    
+    grid-template-columns: repeat(1,1fr);  
+}
 }
 
 @media (max-width: 900px){
-   .form {
-        grid-template-columns: repeat(1, 1fr);
-        height: fit-content;
+   main{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
         }
 }
 
 @media (max-width: 600px) {
-    main {
-    overflow: hidden;
-    display:none;
-    background-color: blue;
+    main{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    }
 }    
-}
 
 footer{
     background-color: rgb(247, 242, 181);
@@ -205,21 +232,28 @@ footer{
 
 @media (max-width: 1200px) {
     footer {
+        display: grid;
     grid-template-columns: repeat(1, 1fr);
-    height: fit-content;
 }    
 }
 
 @media (max-width: 900px){
    footer {
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
-    height: fit-content;
         }
 }
 
 @media (max-width: 600px) {
     footer {
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
-    height: fit-content;
+}    
+}
+
+@media (max-width: 300px) {
+    footer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
 }    
 }
