@@ -7,10 +7,11 @@
 header{
     background-color: rgb(247, 242, 181);
     display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 20px;
+   
 
 }
 .slogan{
@@ -25,6 +26,34 @@ header img{
 .title h1{
     color: rgb(99, 49, 3);
     font-size: 60px;
+}
+
+/* primer responsive header */
+
+@media (max-width: 1200px) {
+    header {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: fit-content;
+}    
+}
+
+@media (max-width: 900px){
+   header {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: fit-content;
+        }
+}
+
+@media (max-width: 600px) {
+    header {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: fit-content;
+}    
 }
 
 .top{
@@ -125,6 +154,32 @@ main{
     align-items: center;
 }
 
+
+/* segundo responsive en main */
+@media (max-width: 1200px) {
+    main {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: fit-content;
+}    
+}
+
+@media (max-width: 900px){
+   .form {
+        grid-template-columns: repeat(1, 1fr);
+        height: fit-content;
+        }
+}
+
+@media (max-width: 600px) {
+    main {
+    overflow: hidden;
+    display:none;
+    background-color: blue;
+}    
+}
+
 footer{
     background-color: rgb(247, 242, 181);
     display: flex;
@@ -144,4 +199,27 @@ footer{
 
 .foot .social img{
     height: 30px;
+}
+
+/* tercer responsive en footer */
+
+@media (max-width: 1200px) {
+    footer {
+    grid-template-columns: repeat(1, 1fr);
+    height: fit-content;
+}    
+}
+
+@media (max-width: 900px){
+   footer {
+    grid-template-columns: repeat(1, 1fr);
+    height: fit-content;
+        }
+}
+
+@media (max-width: 600px) {
+    footer {
+    grid-template-columns: repeat(1, 1fr);
+    height: fit-content;
+}    
 }
