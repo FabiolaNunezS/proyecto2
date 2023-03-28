@@ -67,6 +67,7 @@ header{
     color: rgb(99, 49, 3);;
 }
 
+
 main{
     display: flex;
     justify-content: center;
@@ -75,35 +76,6 @@ main{
 
 }
 
-
-/* h2 dentro de main responsive  */
-@media (max-width: 1200px) {
-    main h2{
-    display: grid;
-    grid-template-columns: repeat(1,1fr); 
-}
-}
-
-@media (max-width: 900px){
-   main h2{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-}
-}
-
-@media (max-width: 600px) {
-    main h2 {
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    }
-}    
-
-@media (max-width: 300px) {
-    main h2 {
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    }
-}    
 
 form{
     width: auto;
@@ -183,7 +155,7 @@ select{
 }
 
 
-/* tercer responsive en main */
+/*  responsive en main */
 @media (max-width: 1200px) {
     main{
     display: grid;
@@ -204,6 +176,13 @@ select{
     grid-template-columns: repeat(1, 1fr);
     }
 }    
+
+@media (max-width: 300px) {
+    main{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    }
+}  
 
 footer{
     background-color: rgb(247, 242, 181);
@@ -226,11 +205,11 @@ footer{
     height: 30px;
 }
 
-/* tercer responsive en footer */
+/*  responsive en footer */
 
 @media (max-width: 1200px) {
     footer {
-        display: grid;
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
 }    
 }
