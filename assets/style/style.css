@@ -10,7 +10,13 @@ header{
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding-bottom: 20px;
+
+}
+.slogan{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(99, 49, 3);
 }
 
 header img{
@@ -18,7 +24,7 @@ header img{
 }
 .title h1{
     color: rgb(99, 49, 3);
-    font-size: 40px;
+    font-size: 60px;
 }
 
 .top{
@@ -32,6 +38,10 @@ header img{
     margin-bottom: 20px;
 }
 
+h2{
+    color: rgb(99, 49, 3);
+}
+
 form{
     width: 500px;
     display:flex;
@@ -40,13 +50,17 @@ form{
     font-size: 20px;
     font-weight: 600;
     margin: 40px;
-    padding: 40px;
+    padding: 100px;
     border-radius: 50px;
-  background-color: blueviolet;
+    background-image:url(../image/background.jpg);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover
 
 }
-p1 {
+.explanation{
     font-size: 12px;
+    color: rgb(99, 49, 3);
 }
 
 input{
@@ -55,11 +69,12 @@ input{
    
 }
 
-.input{
+.input-names{
     display: flex;
     justify-content: center;
     margin: 10px;
     text-transform: uppercase;
+    color: rgb(80, 75, 2)
 }
 
 .input-field{
@@ -108,4 +123,25 @@ main{
     justify-content: center;
     text-align: center;
     align-items: center;
+}
+
+footer{
+    background-color: rgb(247, 242, 181);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.foot .text {
+    color: rgb(80, 75, 2);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.foot .social img{
+    height: 30px;
 }
