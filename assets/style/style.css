@@ -443,6 +443,9 @@ footer {
     footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -450,6 +453,9 @@ footer {
     footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -457,5 +463,8 @@ footer {
     footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
