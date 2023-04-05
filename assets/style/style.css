@@ -5,8 +5,12 @@
 }
 
 header img {
-    width: 200px;
-    margin-bottom: -60px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: -50px;
 }
 
 header {
@@ -15,25 +19,24 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px 30px;
-
+    padding-bottom: 30px;
 }
 
-.title h1 {
+header a{
     color: rgb(99, 49, 3);
     font-size: 60px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.slogan {
-    font-size: 20px;
-    font-weight: 600;
-    color: rgb(99, 49, 3);
+nav a:hover{
+    color: rgb(117, 113, 113);
 }
 
 /* primer responsive header */
 
 @media (max-width: 1200px) {
-    header {
+    header{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
@@ -57,6 +60,43 @@ header {
     header {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .img{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .img{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .img{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 300px) {
+    .img{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
 }
 

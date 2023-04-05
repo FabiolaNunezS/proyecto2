@@ -15,16 +15,13 @@
 <body>
 
     <header>
-        <section class="header">
-            <img src="./assets/image/logo.png" alt="perro">
-            <div class="title">
-                <h1> DoguiLand </h1>
-                <div class="slogan">
-                    <p> "Tenemos todo lo que necesitas para tener un perri-hijo"</p>
-                </div>
+        <nav>
+            <div class="img">
+                <img src="./assets/image/logo.png" alt="perro">
             </div>
+            <a href="#">Doguiland</a>
+        </nav>
     </header>
-    </section>
 
     <main>
         <section class="form">
@@ -32,32 +29,30 @@
                 <h2> Lista de productos para tu cachorrito en el hogar </h2>
             </div>
             <form>
-                <div>
                     <div class="input-names">
                         <label for="products">Producto</label>
                     </div>
                     <div class="input-field">
-                        <input id="products" type="text" placeholder="nombre del producto">
+                        <input id="products" name="products" type="text" placeholder="nombre del producto">
                     </div>
-                </div>
-                <div>
+            
                     <div class="input-names">
                         <label for="units">Unidades</label>
                     </div>
                     <div class="input-field">
-                        <input id="units" type="number" placeholder="0" min="0" max="10">
+                        <input id="units" name="units" type="number" placeholder="0" min="0" max="10">
                     </div>
                     <div class="explanation">
                         <p>*solo se pueden agregar hasta 10 unidades</p>
                     </div>
 
-                </div>
                 <div class="selection">
                     <div class="input-names">
                         <p>Categoria</p>
                     </div>
                     <div class="category">
                         <select name="category" id="category">
+                            
                             <option value="food">Alimentacion</option>
                             <option value="foodBowl">accesorios para alimentacion</option>
                             <option value="bath">Higiene</option>
