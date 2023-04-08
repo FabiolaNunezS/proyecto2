@@ -67,40 +67,46 @@ console.log(editButton)
 //NUEVA FUNCION EN RESPUESTAS
 
 const addButton = document.getElementById("add")
-addButton.addEventListener("click", creat)
-// const tareas = []
+addButton.addEventListener("click", create)
 
-function creat(event) {
-    // console.log (tarea)
+const productsInput = document.getElementById("products")
+const unitsInput = document.getElementById("units")
+const categoryInput = document.getElementById("category")
+
+
+const tareas = []
+
+function create(event) {
     event.preventDefault()
-    const tarea = readForm()
-    createRow(tarea)
+    const respuesta = formulario()
+    createRow(respuesta)
     clearForm()
 }
 
-function readForm() {
+function formulario() {
     const productsInput = document.getElementById("products").value
     const unitsInput = document.getElementById("units").value
     const categoryInput = document.getElementById("category").value
+    
 
-    const tarea = {
-        producto: productsInput.value,
-        marca: unitsInput.value,
-        categoria: categoryInput.value
+    const respuesta = {
+        producto: productsInput,
+        marca: unitsInput,
+        categoria: categoryInput
     }
 
-    // tareas.push(tarea)
-    return tarea
+    tareas.push(respuesta)
+    return respuesta
 }
 
-function createRow(tarea) {
+function createRow(respuesta) {
     const tbody = document.getElementById("tbody")
 
     tbody.innerHTML += `
           <tr>
-             <td>${tarea.products}</td>                
-             <td>${tarea.units}</td>
-             <td>${tarea.category}</td>
+             <td>${respuesta.producto}</td>                
+             <td>${respuesta.marca}</td>
+             <td>${respuesta.categoria}</td>
              <td>
                  <div class="button-2">
                  <button class="edit">Editar</button>
@@ -109,7 +115,7 @@ function createRow(tarea) {
              </td>
           </tr>             
       `
-    }
+}
 
 function clearForm() {
     const form = document.getElementById("form")
