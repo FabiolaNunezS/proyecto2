@@ -22,21 +22,21 @@ header {
     padding-bottom: 30px;
 }
 
-header a{
+header a {
     color: rgb(99, 49, 3);
     font-size: 60px;
     text-decoration: none;
     font-weight: 600;
 }
 
-nav a:hover{
+nav a:hover {
     color: rgb(117, 113, 113);
 }
 
 /* primer responsive header */
 
 @media (max-width: 1200px) {
-    header{
+    header {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
@@ -65,7 +65,7 @@ nav a:hover{
 
 
 @media (max-width: 1200px) {
-    .img{
+    .img {
         display: flex;
         text-align: center;
         align-items: center;
@@ -74,7 +74,7 @@ nav a:hover{
 }
 
 @media (max-width: 900px) {
-    .img{
+    .img {
         display: flex;
         text-align: center;
         align-items: center;
@@ -83,7 +83,7 @@ nav a:hover{
 }
 
 @media (max-width: 600px) {
-    .img{
+    .img {
         display: flex;
         text-align: center;
         align-items: center;
@@ -92,7 +92,7 @@ nav a:hover{
 }
 
 @media (max-width: 300px) {
-    .img{
+    .img {
         display: flex;
         text-align: center;
         align-items: center;
@@ -101,8 +101,8 @@ nav a:hover{
 }
 
 
-#top {
-    font-size: 18px;
+h1 {
+    font-size: 20px;
     display: flex;
     text-align: center;
     align-items: center;
@@ -114,18 +114,18 @@ nav a:hover{
 }
 
 @media (max-width: 600px) {
-    #top {
+    h1 {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        font-size: 11px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 300px) {
-    #top {
+    h1 {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        font-size: 11px;
+        font-size: 14px;
     }
 }
 
@@ -133,12 +133,12 @@ nav a:hover{
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
 
 }
-
 
 form {
     width: auto;
@@ -156,39 +156,34 @@ form {
     background-size: cover
 }
 
-.explanation {
-    font-size: 12px;
-    color: rgb(99, 49, 3);
-}
-
 input {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     padding: 5px;
     font-size: 20px;
     font-weight: 600;
-
+    
 }
 
 .input-names {
+    
     display: flex;
+    text-align: center;
     justify-content: center;
+    align-items: center;
     margin: 10px;
     text-transform: uppercase;
     color: rgb(80, 75, 2)
 }
 
-.input-field {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.category {
-    display: flex;
-    flex-direction: column;
-}
-
 select {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     padding: 5px;
     font-size: 20px;
@@ -198,7 +193,7 @@ select {
 
 #add {
     color: rgb(80, 75, 2);
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     padding: 10px;
     background-color: rgb(247, 242, 181);
@@ -211,8 +206,6 @@ select {
 #add:hover {
     color: grey;
 }
-
-
 
 .button {
     display: flex;
@@ -239,8 +232,12 @@ select {
 
 @media (max-width: 600px) {
     main {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        /* display: grid;
+        grid-template-columns: repeat(1, 1fr); */
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -251,201 +248,95 @@ select {
     }
 }
 
-.container {
-    padding: 100px;
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-}
-
-.box {
-    background-color: rgb(247, 244, 215);
-    width: 100%;
-    display: grid;
+table {
+    border: 1px solid rgb(80, 75, 2);
+    /* background-color: rgb(248, 247, 239); */
+    padding: 10px;
     margin-bottom: 20px;
-    border-radius: 10px;
-    padding: 10px;
 }
 
-.input-answers {
-    display: flex;
-    font-size: 20px;
-    font-weight: 600;
+th {
+    border: 2px solid rgb(80, 75, 2);
+    background-color:beige;
+    text-transform:uppercase;
+    padding: 20px;
     color: rgb(80, 75, 2);
-
 }
 
-.input-field2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-#delete {
-    color: rgb(80, 75, 2);
-    font-size: 15px;
+td {
+    border: 1px solid rgb(80, 75, 2);
     font-weight: 600;
-    padding: 10px;
+    padding: 20px;
+    color: rgb(80, 75, 2);
+}
+
+.delete {
+    color: rgb(80, 75, 2);
     border-color: rgb(80, 75, 2);
-    border-radius: 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    padding: 0 20px 0 20px;
 }
 
-#delete:hover {
+.delete:hover {
     color: brown;
 }
 
 
-#edit {
+.edit {
     color: rgb(80, 75, 2);
-    font-size: 15px;
-    font-weight: 600;
-    padding: 10px;
     border-color: rgb(80, 75, 2);
-    border-radius: 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    padding: 0 20px 0 20px;
 }
 
-#edit:hover {
+.edit:hover {
     color: brown;
 }
 
-
-.button-2 {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
 
 /* RESPONSIVE EN RESPUESTAS */
 
 @media (max-width: 1200px) {
-    .container {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
 
+
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: scroll;
+                
     }
 
-    .box {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-    }
-    .input-answers {
-        display: flex;
-        flex-direction: column;
-    
-    }
-    
-    .input-field2 {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
 }
 
 @media (max-width: 900px) {
-    .container {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .box {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-    }
-    .input-answers {
-        display: flex;
-        flex-direction: column;
-    
-    }
-    
-    .input-field2 {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: scroll;
+                
     }
 }
 
 @media (max-width: 600px) {
-    .container {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .box {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-    }
-    .input-answers {
-        display: flex;
-        flex-direction: column;
-    
-    }
-    
-    .input-field2 {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
+    table {
+        width: 100%;
+        display: block;
+        overflow-x:scroll;
+                
     }
 }
 
 @media (max-width: 300px) {
-    .container {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .box {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-
-    }
-    .input-answers {
-        display: flex;
-        flex-direction: column;
-    
-    }
-    
-    .input-field2 {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
+    table {
+        width: 30%;
+        display: block;
+        overflow-x: scroll;
+                
     }
 }
+
 /* FOOTER */
 
 footer {
@@ -483,9 +374,7 @@ footer {
     footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+
     }
 }
 
@@ -493,9 +382,8 @@ footer {
     footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        font-size: 12px;
+
     }
 }
 
@@ -503,8 +391,6 @@ footer {
     footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        font-size: 12px;
     }
 }

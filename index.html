@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
     <header>
         <nav>
             <div class="img">
@@ -22,136 +21,56 @@
             <a href="#">Doguiland</a>
         </nav>
     </header>
-
     <main>
         <section class="form">
-            <div id="top">
-                <h2> Lista de productos para tu cachorrito en el hogar </h2>
-            </div>
-            <form>
-                    <div class="input-names">
-                        <label for="products">Producto</label>
-                    </div>
-                    <div class="input-field">
-                        <input id="products" name="products" type="text" placeholder="nombre del producto">
-                    </div>
-            
-                    <div class="input-names">
-                        <label for="units">Unidades</label>
-                    </div>
-                    <div class="input-field">
-                        <input id="units" name="units" type="number" placeholder="0" min="0" max="10">
-                    </div>
-                    <div class="explanation">
-                        <p>*solo se pueden agregar hasta 10 unidades</p>
-                    </div>
+            <h1> Lista de productos para tu cachorrito en el hogar </h1>
+            <form id="form">
+                <label class="input-names" for="products">Producto</label>
+                <input id="products" name="products" type="text" placeholder="nombre del producto">
 
-                <div class="selection">
-                    <div class="input-names">
-                        <p>Categoria</p>
-                    </div>
-                    <div class="category">
-                        <select name="category" id="category">
-                            
-                            <option value="food">Alimentacion</option>
-                            <option value="foodBowl">accesorios para alimentacion</option>
-                            <option value="bath">Higiene</option>
-                            <option value="toys">Juguetes</option>
-                            <option value="bedTime">Accesorios para dormir</option>
-                            <option value="accesoriesOutside">Accesorios para paseo</option>
-                            <option value="pills">Medicinas</option>
-                        </select>
-                    </div>
-                    <div class="button">
-                        <input id="add" type="submit" value="Agregar">
-                    </div>
+                <label class="input-names" for="units">Marca</label>
+                <input id="units" name="units" type="text" placeholder="marca">
+
+                <label class="input-names" for="category">Categoria</label>
+                <select name="category" id="category">
+                    <option disabled selected>Seleccione una opción</option>
+                    <option value="food">Alimentacion</option>
+                    <option value="bath">Higiene</option>
+                    <option value="toys">Juguetes</option>
+                    <option value="bedTime">Accesorios para dormir</option>
+                    <option value="pills">Medicinas</option>
+                </select>
+                <div class="button">
+                    <input id="add" type="submit" value="Agregar">
                 </div>
             </form>
         </section>
-    </main>
-    <!-- RESPUESTAS -->
-    <section class="container">
-        <div class="box">
-            <div class="input-answers">
-                <label for="products">Alimentacion</label>
-            </div>
-            <div class="input-field2">
-                <input id="products" type="text" placeholder="nombre del producto">
-                <input id="products" type="text" placeholder="cantidad">
-                <div class="button-2">
-                    <input id="delete" type="submit" value="Borrar">
-                    <input id="edit" type="submit" value="Editar">
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- <div class="box">
-            <div class="input-answers">
-                <label for="products">accesorios para alimentacion</label>
-            </div>
-            <div class="input-field2">
-                <input id="products" type="text" placeholder="nombre del producto">
-                <input id="products" type="text" placeholder="cantidad">
-                <div class="button-2">
-                    <input id="delete" type="submit" value="Borrar">
-                    <input id="edit" type="submit" value="Editar">
+        <!-- RESPUESTAS -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Categoria</th>
+                    <th>Ajuste</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- <tr>
+                    <td>Alimentos</td>
+                    <td>Comida</td>
+                    <td>Super Dog</td>
+                    <td>
+                        <div class="button-2">
+                            <button class="edit">Editar</button>
+                            <button class="delete">Borrar</button>
+                        </div>
+                    </td>
+                </tr> -->
+            </tbody>
 
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="input-answers">
-                <label for="products">Juguetes</label>
-            </div>
-            <div class="input-field2">
-                <input id="products" type="text" placeholder="nombre del producto">
-                <input id="products" type="text" placeholder="cantidad">
-                <div class="button-2">
-                    <input id="delete" type="submit" value="Borrar">
-                    <input id="edit" type="submit" value="Editar">
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="input-answers">
-                <label for="products">Accesorios para dormir</label>
-            </div>
-            <div class="input-field2">
-                <input id="products" type="text" placeholder="nombre del producto">
-                <input id="products" type="text" placeholder="cantidad">
-                <div class="button-2">
-                    <input id="delete" type="submit" value="Borrar">
-                    <input id="edit" type="submit" value="Editar">
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="input-answers">
-                <label for="products">Accesorios para paseo</label>
-            </div>
-            <div class="input-field2">
-                <input id="products" type="text" placeholder="nombre del producto">
-                <input id="products" type="text" placeholder="cantidad">
-                <div class="button-2">
-                    <input id="delete" type="submit" value="Borrar">
-                    <input id="edit" type="submit" value="Editar">
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="input-answers">
-                <label for="products">Medicinas</label>
-            </div>
-            <div class="input-field2">
-                <input id="products" type="text" placeholder="nombre del producto">
-                <input id="products" type="text" placeholder="cantidad">
-                <div class="button-2">
-                    <input id="delete" type="submit" value="Borrar">
-                    <input id="edit" type="submit" value="Editar">
-                </div>
-            </div>
-        </div> -->
-    </section>
+        </table>
+    </main>
 
     <footer>
         <section class="foot">
