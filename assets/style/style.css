@@ -169,7 +169,6 @@ input {
 }
 
 .input-names {
-
     display: flex;
     text-align: center;
     justify-content: center;
@@ -188,10 +187,11 @@ select {
     padding: 5px;
     font-size: 20px;
     font-weight: 600;
-    color: rgb(80, 75, 2)
+    color: rgb(80, 75, 2);
+    margin-bottom: 30px;
 }
 
-#add {
+button {
     color: rgb(80, 75, 2);
     font-size: 20px;
     font-weight: 600;
@@ -203,16 +203,10 @@ select {
 
 }
 
-#add:hover {
+button:hover {
     color: grey;
 }
 
-.button {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
 
 
 /*  RESPONSIVE EN MAIN */

@@ -1,101 +1,41 @@
-// SELECTORES
-
-//console.log (addButton)
-/*
-const anchors = document.getElementsByTagName("a")
-console.log(anchors)
-
-const labels =  document.getElementsByClassName("input-names")
-console.log(labels)
-
-const input = document.getElementsByTagName("input")
-console.log(input)
-
-const categories = document.getElementsByClassName("category")
-console.log(categories)
-
-const answers = document.getElementsByClassName("input-answers")
-console.log(answers)
-
-const deleteButton = document.getElementById("delete")
-console.log(deleteButton)
-
-const editButton =  document.getElementById("edit")
-console.log(editButton)
-*/
-
-// EVENTS
-
-// const addButton = document.getElementById("add")
-// console.log(addButton)
-
-// addButton.addEventListener("click", () => alert("te hicieron click"))
-
-// const addButton = document.getElementById("add")
-
-
-// addButton.addEventListener("click", datos)
-
-// function datos(event) {
-//     const inputProduct = document.getElementById("products")
-//     alert(inputProduct.value)
-//     ejemploNumerico = parseInt(inputProduct.value)
-
-
-// }
-
-
-// RESPUESTAS
-
-// const productsInput = document.getElementById("products").value
-// alert(productsInput)
-// const unitsInput = document.getElementById("units").value
-// const categoryInput = document.getElementById("category").value
-
-// productsInput.addEventListener("input", handleInput)
-// unitsInput.addEventListener("input", handleInput)
-// categoryInput.addEventListener("input", handleInput)
-
-// const ids = ["product", "units", "category"]
-
-// ids.forEach((id) => {
-//     const element = document.getElementById(id)
-//     element.addEventListener("input", handleInput)
-// })
-
-
-//NUEVA FUNCION EN RESPUESTAS
+// FUNCION EN RESPUESTAS
 
 const addButton = document.getElementById("add")
 addButton.addEventListener("click", create)
 
-const productsInput = document.getElementById("products")
-const unitsInput = document.getElementById("units")
-const categoryInput = document.getElementById("category")
+const editButton = document.getElementById("edit");
+editButton.addEventListener("click", edit);
 
+const tareas = [];
 
-const tareas = []
+const btnEdit = false
+const idBtnEdit = null
 
 function create(event) {
     event.preventDefault()
     const respuesta = formulario()
+    tareas.push(respuesta)
     createRow(respuesta)
     clearForm()
+    saveDataLS()
 }
+const productsInput = document.getElementById("products")
+const unitsInput = document.getElementById("units")
+const categoryInput = document.getElementById("category")
 
 function formulario() {
-    const productsInput = document.getElementById("products").value
-    const unitsInput = document.getElementById("units").value
-    const categoryInput = document.getElementById("category").value
-    
-
-    const respuesta = {
-        producto: productsInput,
-        marca: unitsInput,
-        categoria: categoryInput
+    const id = Date.now()
+    if (btnEdit && idBtnEdit !== null) {
+        id = idBtnEdit;
     }
 
-    tareas.push(respuesta)
+    const respuesta = {
+        producto: productsInput.value,
+        marca: unitsInput.value,
+        categoria: categoryInput.value,
+        id
+    };
+
     return respuesta
 }
 
@@ -109,8 +49,8 @@ function createRow(respuesta) {
              <td>${respuesta.categoria}</td>
              <td>
                  <div class="button-2">
-                 <button class="edit">Editar</button>
-                 <button class="delete">Borrar</button>
+                 <button onclick = "editRow('${respuesta.id}')" class="edit">Editar</button>
+                 <button onclick = "deleteRow('${respuesta.id}')" class="delete">Borrar</button>
                  </div>
              </td>
           </tr>             
@@ -120,10 +60,65 @@ function createRow(respuesta) {
 function clearForm() {
     const form = document.getElementById("form")
     form.reset()
+}
+
+function saveDataLS() {
+    // JSON.stringify()
+    localStorage.setItem("tareas", JSON.stringify(tareas))
+}
+
+function readFromLS() {
+    const tareasLS = JSON.parse(localStorage.getItem('tareas'));
+  if (tareasLS) {
+    tareas = tareasLS;
+    tareas.forEach((tarea) => createRow(tarea));
+  } else {
+    tareas = [];
+  }
+}
+
+function deleteRow(id) {
+    const index = tareas.findIndex((respuesta) => respuesta.id == id);
+    tareas.splice(index, 1)
+    saveDataLS()
+    readFromLS()
+    tbody.innerHTML = "";
+    tareas.forEach((respuesta) => createRow(respuesta));
+}
+
+function editRow(id) {
+    addButton.classList.add("hide")
+    editButton.classList.remove("hide")
+    const index = tareas.findIndex((respuesta)=> respuesta.id == id);
+    const respuesta = tareas[index]
+
+    productsInput.value = respuesta.products;
+    unitsInput.value = respuesta.units;
+    categoryInput.value = respuesta.category;
+    
+    btnEdit = true
+    idBtnEdit = id
 
 }
 
+function edit(e) {
+    e.preventDefault()
+    const tarea = formulario()
+    const index = tareas.findIndex((task) => task.id === respuesta.id);
+    tareas[index] = tarea;
+    saveDataLS();
+    clearForm();
 
+    addButton.classList.remove("hide");
+    editButton.classList.add("hide");
 
+    btnEdit = false
+    idBtnEdit = null
+    
+    tbody.innerHTML = "";
+    readFromLS();
+}
+
+readFromLS();
 
 
