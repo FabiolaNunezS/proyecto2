@@ -1,15 +1,19 @@
 // FUNCION EN RESPUESTAS
 
 const addButton = document.getElementById("add")
-addButton.addEventListener("click", create)
+addButton.addEventListener("click", create);
 
 const editButton = document.getElementById("edit");
 editButton.addEventListener("click", edit);
 
-const tareas = [];
+let tareas = [];
 
-const btnEdit = false
-const idBtnEdit = null
+let editBtn = false;
+let idEditBtn = null;
+
+const productsInput = document.getElementById("products")
+const unitsInput = document.getElementById("units")
+const categoryInput = document.getElementById("category")
 
 function create(event) {
     event.preventDefault()
@@ -19,20 +23,18 @@ function create(event) {
     clearForm()
     saveDataLS()
 }
-const productsInput = document.getElementById("products")
-const unitsInput = document.getElementById("units")
-const categoryInput = document.getElementById("category")
 
 function formulario() {
-    const id = Date.now()
-    if (btnEdit && idBtnEdit !== null) {
-        id = idBtnEdit;
+     id = Date.now()
+
+    if (editBtn && idEditBtn !== null) {
+        id = idEditBtn;
     }
 
     const respuesta = {
-        producto: productsInput.value,
-        marca: unitsInput.value,
-        categoria: categoryInput.value,
+        products: productsInput.value,
+        units: unitsInput.value,
+        category: categoryInput.value,
         id
     };
 
@@ -44,9 +46,9 @@ function createRow(respuesta) {
 
     tbody.innerHTML += `
           <tr>
-             <td>${respuesta.producto}</td>                
-             <td>${respuesta.marca}</td>
-             <td>${respuesta.categoria}</td>
+             <td>${respuesta.products}</td>                
+             <td>${respuesta.units}</td>
+             <td>${respuesta.category}</td>
              <td>
                  <div class="button-2">
                  <button onclick = "editRow('${respuesta.id}')" class="edit">Editar</button>
@@ -58,30 +60,30 @@ function createRow(respuesta) {
 }
 
 function clearForm() {
-    const form = document.getElementById("form")
+    const form = document.getElementById("form");
     form.reset()
 }
 
 function saveDataLS() {
-    // JSON.stringify()
+    JSON.stringify()
     localStorage.setItem("tareas", JSON.stringify(tareas))
 }
 
 function readFromLS() {
     const tareasLS = JSON.parse(localStorage.getItem('tareas'));
-  if (tareasLS) {
-    tareas = tareasLS;
-    tareas.forEach((tarea) => createRow(tarea));
-  } else {
-    tareas = [];
-  }
+    if (tareasLS) {
+        tareas = tareasLS;
+        tareas.forEach((respuesta) => createRow(respuesta));
+    } else {
+        tareas = [];
+    }
 }
 
 function deleteRow(id) {
     const index = tareas.findIndex((respuesta) => respuesta.id == id);
-    tareas.splice(index, 1)
-    saveDataLS()
-    readFromLS()
+    tareas.splice(index, 1);
+    saveDataLS();
+    readFromLS();
     tbody.innerHTML = "";
     tareas.forEach((respuesta) => createRow(respuesta));
 }
@@ -89,32 +91,33 @@ function deleteRow(id) {
 function editRow(id) {
     addButton.classList.add("hide")
     editButton.classList.remove("hide")
-    const index = tareas.findIndex((respuesta)=> respuesta.id == id);
+    const index = tareas.findIndex((respuesta) => respuesta.id == id);
     const respuesta = tareas[index]
 
     productsInput.value = respuesta.products;
     unitsInput.value = respuesta.units;
     categoryInput.value = respuesta.category;
-    
-    btnEdit = true
-    idBtnEdit = id
+
+    editBtn = true;
+    idEditBtn = id;
 
 }
 
 function edit(e) {
     e.preventDefault()
-    const tarea = formulario()
-    const index = tareas.findIndex((task) => task.id === respuesta.id);
-    tareas[index] = tarea;
+    const respuesta = formulario()
+    const index = tareas.findIndex((tarea) => tarea.id === respuesta.id);
+    tareas[index] = respuesta;
     saveDataLS();
     clearForm();
 
     addButton.classList.remove("hide");
     editButton.classList.add("hide");
 
-    btnEdit = false
-    idBtnEdit = null
+    idEditBtn = null;
+    editBtn = false;
     
+
     tbody.innerHTML = "";
     readFromLS();
 }
