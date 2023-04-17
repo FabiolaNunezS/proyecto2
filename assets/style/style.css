@@ -121,14 +121,6 @@ h1 {
     }
 }
 
-@media (max-width: 300px) {
-    h1 {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        font-size: 14px;
-    }
-}
-
 /* MAIN */
 
 main {
@@ -211,8 +203,6 @@ button:hover {
     display: none
 }
 
-
-
 /*  RESPONSIVE EN MAIN */
 @media (max-width: 1200px) {
     main {
@@ -230,8 +220,6 @@ button:hover {
 
 @media (max-width: 600px) {
     main {
-        /* display: grid;
-        grid-template-columns: repeat(1, 1fr); */
         display: flex;
         text-align: center;
         align-items: center;
@@ -248,7 +236,6 @@ button:hover {
 
 table {
     border: 1px solid rgb(80, 75, 2);
-    /* background-color: rgb(248, 247, 239); */
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -302,9 +289,8 @@ td {
     table {
         width: 100%;
         text-align: center;
-       
-    }
 
+    }
 
 }
 
@@ -379,32 +365,22 @@ footer {
 
 @media (max-width: 1200px) {
     footer {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        width: 100%;       
+        text-align: center;
     }
 }
 
 @media (max-width: 900px) {
     footer {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-
+        width: 100%;       
+        text-align: center;
     }
 }
 
 @media (max-width: 600px) {
     footer {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        font-size: 12px;
-
+        width: 100%;       
+        text-align: center;
     }
 }
 
-@media (max-width: 300px) {
-    footer {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        font-size: 12px;
-    }
-}
