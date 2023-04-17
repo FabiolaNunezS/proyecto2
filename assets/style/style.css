@@ -165,7 +165,7 @@ input {
     padding: 5px;
     font-size: 20px;
     font-weight: 600;
-    
+
 }
 
 .input-names {
@@ -205,6 +205,10 @@ button {
 
 button:hover {
     color: grey;
+}
+
+.hide {
+    display: none
 }
 
 
@@ -251,8 +255,8 @@ table {
 
 th {
     border: 2px solid rgb(80, 75, 2);
-    background-color:beige;
-    text-transform:uppercase;
+    background-color: beige;
+    text-transform: uppercase;
     padding: 20px;
     color: rgb(80, 75, 2);
 }
@@ -297,37 +301,53 @@ td {
 
     table {
         width: 100%;
-        display: block;
-        overflow-x: scroll;
-                
+        text-align: center;
+       
     }
 
-}
 
-@media (max-width: 900px) {
-    table {
-        width: 100%;
-        display: block;
-        overflow-x: scroll;
-                
-    }
 }
 
 @media (max-width: 600px) {
+
     table {
         width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+
+    tbody td {
         display: block;
-        overflow-x:scroll;
-                
+        text-align: center;
+    }
+
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align: center;
     }
 }
+
+
 
 @media (max-width: 300px) {
     table {
         width: 30%;
         display: block;
         overflow-x: scroll;
-                
+
     }
 }
 

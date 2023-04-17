@@ -22,6 +22,7 @@ function create(event) {
     createRow(respuesta)
     clearForm()
     saveDataLS()
+    console.log(tareas)
 }
 
 function formulario() {
@@ -65,17 +66,17 @@ function clearForm() {
 }
 
 function saveDataLS() {
-    JSON.stringify()
+    // JSON.stringify()
     localStorage.setItem("tareas", JSON.stringify(tareas))
 }
 
 function readFromLS() {
     const tareasLS = JSON.parse(localStorage.getItem('tareas'));
     if (tareasLS) {
-        tareas = tareasLS;
+        tareas = tareasLS
         tareas.forEach((respuesta) => createRow(respuesta));
     } else {
-        tareas = [];
+        tareas = []
     }
 }
 
@@ -106,8 +107,9 @@ function editRow(id) {
 function edit(e) {
     e.preventDefault()
     const respuesta = formulario()
-    const index = tareas.findIndex((tarea) => tarea.id === respuesta.id);
+    const index = tareas.findIndex((tarea) => tarea.id == respuesta.id);
     tareas[index] = respuesta;
+    console.log(index)
     saveDataLS();
     clearForm();
 
