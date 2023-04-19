@@ -1,4 +1,4 @@
-// FUNCION EN RESPUESTAS
+// FUNCION EN TABLA DE RESPUESTAS
 
 const addButton = document.getElementById("add")
 addButton.addEventListener("click", create);
@@ -7,14 +7,18 @@ const editButton = document.getElementById("edit");
 editButton.addEventListener("click", edit);
 
 let tareas = [];
+readFromLS();
 
+// declarar las variables del edit y id
 let editBtn = false;
+// mientras se edita
 let idEditBtn = null;
 
 const productsInput = document.getElementById("products")
 const unitsInput = document.getElementById("units")
 const categoryInput = document.getElementById("category")
 
+// boton agregar
 function create(event) {
     event.preventDefault()
     const respuesta = formulario()
@@ -22,12 +26,14 @@ function create(event) {
     createRow(respuesta)
     clearForm()
     saveDataLS()
-    console.log(tareas)
+    // console.log(tareas)
 }
 
 function formulario() {
-     id = Date.now()
+    // inicializar la variable id
+    id = Date.now()
 
+    // condicional si es que se está editando
     if (editBtn && idEditBtn !== null) {
         id = idEditBtn;
     }
@@ -42,6 +48,7 @@ function formulario() {
     return respuesta
 }
 
+// llenar el formulario
 function createRow(respuesta) {
     const tbody = document.getElementById("tbody")
 
@@ -80,16 +87,37 @@ function readFromLS() {
     }
 }
 
+// funcion eliminar
 function deleteRow(id) {
-    const index = tareas.findIndex((respuesta) => respuesta.id == id);
-    tareas.splice(index, 1);
-    saveDataLS();
-    readFromLS();
-    tbody.innerHTML = "";
-    tareas.forEach((respuesta) => createRow(respuesta));
+    Swal.fire({
+        title: '¿Estás Seguro?',
+        text: "",
+        icon: 'error',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, borrar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Borrado',
+                '',
+                'success'
+            )
+            const index = tareas.findIndex((respuesta) => respuesta.id == id);
+            tareas.splice(index, 1);
+            saveDataLS();
+            tbody.innerHTML = "";
+            readFromLS();
+        }
+    })
+
 }
 
+// funcion editar del array 
 function editRow(id) {
+
     addButton.classList.add("hide")
     editButton.classList.remove("hide")
     const index = tareas.findIndex((respuesta) => respuesta.id == id);
@@ -99,11 +127,13 @@ function editRow(id) {
     unitsInput.value = respuesta.units;
     categoryInput.value = respuesta.category;
 
+    // modificar las variables
     editBtn = true;
     idEditBtn = id;
 
 }
 
+// actualizar
 function edit(e) {
     e.preventDefault()
     const respuesta = formulario()
@@ -113,17 +143,18 @@ function edit(e) {
     saveDataLS();
     clearForm();
 
+    // cambiar la clase de los botones
     addButton.classList.remove("hide");
     editButton.classList.add("hide");
 
+    // retornar las variables a su estado inicial
     idEditBtn = null;
     editBtn = false;
-    
 
     tbody.innerHTML = "";
     readFromLS();
 }
 
-readFromLS();
+// readFromLS();
 
 
